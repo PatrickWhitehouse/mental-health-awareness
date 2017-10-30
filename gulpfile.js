@@ -3,6 +3,7 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
+var sassGlob = require('gulp-sass-glob');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -65,3 +66,11 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+gulp.task('styles', function () {
+    return gulp
+        .src('_scss/main.scss')
+        .pipe(sassGlob())
+        .pipe(sass())
+        .pipe(gulp.dest('css'));
+});
