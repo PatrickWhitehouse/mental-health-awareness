@@ -2,6 +2,11 @@
 @import "bulma";
 
 
-body {
-    background: white;
+//  Set image to 50%
+
+img.is-50{
+  max-width: 100%;
+  @media(min-width: 768px){
+    max-width: 50%;
+  }
 }

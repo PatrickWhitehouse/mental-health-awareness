@@ -7948,5 +7948,8 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem; }
 
 /*# sourceMappingURL=bulma.css.map */
-body {
-  background: white; }
+img.is-50 {
+  max-width: 100%; }
+  @media (min-width: 768px) {
+    img.is-50 {
+      max-width: 50%; } }
